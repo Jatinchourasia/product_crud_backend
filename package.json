@@ -1,0 +1,11 @@
+{
+  "name": "product_crud",
+  "version": "1.0.0",
+  "description": "RESTful API that supports CRUD operation for product, with JWT authentication",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jatin chourasia",
+  "license": "ISC"
+}
