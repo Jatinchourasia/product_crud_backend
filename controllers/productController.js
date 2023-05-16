@@ -4,8 +4,6 @@ const PromiseHandler = require("../utils/promiseHandler");
 const cloudinary = require("cloudinary");
 
 exports.addProduct = PromiseHandler(async (req, res, next) => {
-  console.log("from server", req.files);
-
   if (!req.files) {
     return next(new CustomError("images are required", 401));
   }
@@ -29,9 +27,7 @@ exports.addProduct = PromiseHandler(async (req, res, next) => {
 });
 
 exports.deleteProduct = PromiseHandler(async (req, res, next) => {
-  console.log(req.params.id);
   const product = await Product.findById(req.params.id);
-  console.log(product);
   if (!product) {
     return next(new CustomError("No product found with this id", 401));
   }
@@ -52,7 +48,6 @@ exports.adminUpdateOneProduct = PromiseHandler(async (req, res, next) => {
   if (!product) {
     return next(new CustomError("No product found with this id", 401));
   }
-  console.log(req.body);
   if (req.files) {
     //destroy the existing image
 
