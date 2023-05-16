@@ -1,13 +1,13 @@
 const express = require("express");
 const app = express();
 const fileUpload = require("express-fileupload");
-
+const cors = require("cors");
 //routes
 const home = require("./routes/home");
 const user = require("./routes/user");
 const product = require("./routes/product");
 const cookieParser = require("cookie-parser");
-
+app.use(cors());
 //middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
